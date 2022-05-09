@@ -121,4 +121,16 @@ trait DocumentUseTrait {
             'countRFI_response' => $count_RFI_response,
         );
     }
+
+    public function returnableResponseData($returnData, $error){
+        if(isset($returnData)){
+            return json_encode(['Data'=> 
+            ['response' =>$returnData]
+        ]);
+        }else{
+            return json_encode(['Error'=> 
+            ['message' =>$error]
+        ]);
+        }
+    }
 }

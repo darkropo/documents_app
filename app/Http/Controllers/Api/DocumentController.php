@@ -146,10 +146,10 @@ class DocumentController extends Controller
             if (!empty($result)) {
                 $returnData = $result;
             } else {
-                $error = ApiConstant::DATA_NOT_FOUND;
+                $error = config('apiconstant.DATA_NOT_FOUND');
             }
         } catch (\Exception $e) {
-            $error = ApiConstant::DATA_NOT_FOUND;
+            $error = config('apiconstant.DATA_NOT_FOUND');
         }
         return $this->returnableResponseData($returnData, $error);
     }
