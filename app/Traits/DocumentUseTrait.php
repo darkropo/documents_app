@@ -112,7 +112,7 @@ trait DocumentUseTrait {
             }
         }
         return array(
-            'message' => ApiConstant::DATA_FOUND, "data" => $all_files,
+            'message' => config('apiconstant.DATA_FOUND'), "data" => $all_files,
             'allcount' => $count,
             'countplans' => $count_plans,
             'countspecs' => $count_specs,
@@ -129,7 +129,9 @@ trait DocumentUseTrait {
         ]);
         }else{
             return json_encode(['Error'=> 
-            ['message' =>$error]
+            [   'error'   => $error,
+                'message' => config('apiconstant.ERROR_DATA_NOT_FOUND_MSG'),
+            ]
         ]);
         }
     }
