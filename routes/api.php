@@ -21,7 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller('App\Http\Controllers\Api\DocumentController'::class)->group(function () {
     Route::prefix('projects/get-documents')->group(function (){
         Route::get('/sorted', 'getProjectDocumentsorted');
-        Route::get('/sortedfiles/{data}/{userData}', 'getsortedFiles');
     });
     
 });
